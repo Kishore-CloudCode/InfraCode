@@ -1,10 +1,6 @@
-# The csvserver assignment
-
+ The csvserver assignment
    
    17  git clone https://github.com/Kishore-CloudCode/InfraCode.git
-   18  ls
-   19  cd InfraCode/
-   20  ls -l
    21  cd solution/
    22  ls
    23  docker pull infracloudio/csvserver:latest
