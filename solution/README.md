@@ -17,7 +17,7 @@
    #  docker ps -a
    #  docker stop 7b9
    #  docker ps -a
-   #  docker container run -itd -v $(pwd)/inputFile:/csvserver/inputdata -p 9393:9300 -e CSVSERVER_BORDER="Orange" --name app1 csvserver_withdata 
+   #  docker container run -itd -v $(pwd)/inputFile:/csvserver/inputdata -p 9393:9300 -e CSVSERVER_BORDER="Orange" --name app1 infracloudio/csvserver
    #  docker ps
    #  curl http://localhost:9393/raw
    #  pwd
