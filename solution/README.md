@@ -111,3 +111,87 @@ Once you have pushed your progress,
 ---
 
 <a name="ftn1">1</a>: This scenario is inspired by the *[Tying This Together: Reverse Engineering a Production Service](https://sre.google/sre-book/accelerating-sre-on-call/#tying-this-together-reverse-engineering-a-production-service-ZKsDiLce)* section of chapter 28 from the Site Reliability Engineering book by Google.
+    1  mkdir private
+    2  cd private/
+    3  ll
+    4  ls -l
+    5  git clone https://github.com/infracloudio/csvserver.git
+    6  ll
+    7  ls -l
+    8  cd csvserver/
+    9  ls
+   10  cd ..
+   11  pwd
+   12  ls
+   13  rm -rf csvserver/
+   14  ls
+   15  pwd
+   16  ls -la .
+   17  git clone https://github.com/Kishore-CloudCode/InfraCode.git
+   18  ls
+   19  cd InfraCode/
+   20  ls -l
+   21  cd solution/
+   22  ls
+   23  docker pull infracloudio/csvserver:latest
+   24  docker container run -itd infracloudio/csvserver:latest
+   25  docker ps
+   26  docker ps -a
+   27  docker container logs 7b9
+   28  ls
+   29  docker cp inputFile 7b9:/csvserver
+   30  docker start 7b9
+   31  docker ps -a
+   32  docker ps 
+   33  docker container logs 7b9
+   34  docker cp inputFile 7b9:/csvserver/inputdata
+   35  docker start 7b9
+   36  docker container logs 7b9
+   37  docker ps -a
+   38  docker stop 7b9
+   39  docker ps -a
+   40  docker container commit 7b9 csvserver_withdata
+   41  docker images
+   42  docker container run -itd -p 9393:9300 -e CSVSERVER_BORDER="Orange" csvserver_withdata app1
+   43  docker container run -itd -p 9393:9300 -e CSVSERVER_BORDER="Orange" --name app1 csvserver_withdata 
+   44  docker ps
+   45  curl http://localhost:9393/raw
+   46  pwd
+   47  curl -o ./part-1-output http://localhost:9393/raw
+   48  ls
+   49  docker ps
+   50  docker logs 1da
+   51  docker logs 1da >& part-1-logs
+   52  ls
+   53  cat part-1-logs 
+   54  pwd
+   55  ls
+   56  echo "docker container run -itd -p 9393:9300 -e CSVSERVER_BORDER="Orange" --name app1 csvserver_withdata" | tee -a part-1-cmd
+   57  ls
+   58  more part-1-cmd 
+   59  cd ..
+   60  ll
+   61  ls -l
+   62  git status
+   63  git commit -a -m "part1" 
+   64  git config --global user.email "kishore.linux@hotmail.com"
+   65  git config --global user.name "kishore"
+   66  git commit -a -m "part1" 
+   67  cd solution/
+   68  git add *
+   69  git status
+   70  git commit -m "part1"
+   71  git push
+   72  pwd
+   73  ls
+   74  mv ../README.md .
+   75  ls
+   76  git commit -a -m "part1 Readme" README.md 
+   77  git add README.md 
+   78  git commit -m "part1 Readme" 
+   79  git push
+   80  history 
+   81  pwd
+   82  ls
+   83  history 
+   84  history | tee -a README.md 
