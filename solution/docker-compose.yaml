@@ -1,0 +1,13 @@
+version: "3.5"
+services:
+    app1:
+      image: csvserver_withdata
+      ports:
+        - 9393:9300
+      environment:
+         CSVSERVER_BORDER: "Orange"
+      networks:
+        - internal
+
+networks:
+   internal:
