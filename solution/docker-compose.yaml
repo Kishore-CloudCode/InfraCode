@@ -11,6 +11,15 @@ services:
       networks:
         - internal
 
+    promethus:
+      image: "prom/prometheus:v2.22.0"
+      volumes:
+        - ${PWD}/prometheus.yml:/etc/prometheus/prometheus.yml
+      ports:
+        - 9090:9090
+      networks:
+        - internal
+
 networks:
    internal:
 
